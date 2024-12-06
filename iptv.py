@@ -141,7 +141,6 @@ def main():
     write_to_file(os.path.join(M3U_DIR, 'Live.m3u'), live_m3u_content)
     logger.info("Successfully merged and saved Live.m3u file")
 
-    generate_youtube_txt()
 
     playlists = {
         "CCTV": file_to_m3u("CCTV.txt"),
