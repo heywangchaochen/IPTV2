@@ -116,29 +116,6 @@ def main():
 
     live_m3u_content = '#EXTM3U\n'
 
-    for channel in ['douyu', 'huya', 'yy', 'bilibili', 'afreecatv']:
-        try:
-            M3U_URL = f"{PROXY_URL}/{channel}/index.m3u"
-            if channel == 'afreecatv' and not PROXY_URL:
-                continue
-
-            if not PROXY_URL:
-                M3U_URL = f"https://ghp.ci/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/{channel}.m3u"
-
-            m3u_content = requests.get(M3U_URL).text
-            channel_id = urlparse(M3U_URL).path.split('/')[1]
-
-            if channel not in ['afreecatv']:
-              write_to_file(os.path.join(M3U_DIR, channel_id + '.m3u'), m3u_content)
-              logger.info(f"Successfully downloaded and saved M3U file for channel {channel_id}")
-
-            live_m3u_content += '\n'.join(m3u_content.split('\n')[1:]) + '\n'
-
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Failed to download M3U file for channel {channel_id}: {e}")
-        except Exception as e:
-            logger.error(f"An error occurred while processing M3U file for channel {channel_id}: {e}")
-
     write_to_file(os.path.join(M3U_DIR, 'Live.m3u'), live_m3u_content)
     logger.info("Successfully merged and saved Live.m3u file")
 
