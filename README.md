@@ -12,10 +12,10 @@
 ## 🔗 订阅链接
 
 - **TXT 订阅链接**
-  - `https://ghp.ci/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/IPTV.txt`
+  - `https://gh-proxy.com/https://raw.githubusercontent.com/heywangchaochen/IPTV2/refs/heads/main/txt/IPTV.txt`
 
 - **M3U 订阅链接**
-  - `https://ghp.ci/https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/IPTV.m3u`
+  - `https://gh-proxy.com/https://raw.githubusercontent.com/heywangchaochen/IPTV2/refs/heads/main/m3u/IPTV.m3u`
 
 - **酒店源 TXT 订阅链接**
   - `https://ghp.ci/https://raw.githubusercontent.com/lalifeier/IPTV/main/txt/hotel/全国.txt`
