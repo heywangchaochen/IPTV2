@@ -144,7 +144,6 @@ def main():
     generate_youtube_txt()
 
     playlists = {
-        "Hot": file_to_m3u("Hot.txt"),
         "CCTV": file_to_m3u("CCTV.txt"),
         "CNTV": file_to_m3u("CNTV.txt"),
         "Shuzi": file_to_m3u("Shuzi.txt"),
@@ -153,25 +152,13 @@ def main():
         "SITV": file_to_m3u("SITV.txt"),
         "Movie": file_to_m3u("Movie.txt"),
         "Sport": file_to_m3u("Sport.txt"),
-        "MiGu": file_to_m3u("MiGu.txt"),
-        "Maiduidui": file_to_m3u("maiduidui.txt"),
-        "lunbo.txt": file_to_m3u("lunbo.txt"),
         "HK": file_to_m3u("hk.txt"),
-        "TW": file_to_m3u("tw.txt"),
-        "YouTube": file_to_m3u("YouTube.txt"),
         "Local": file_to_m3u("Local.txt"),
-        "LiveChina": file_to_m3u("LiveChina.txt"),
-        "Panda": file_to_m3u("Panda.txt"),
-        "Documentary": file_to_m3u("Documentary.txt"),
-        "Chunwan": file_to_m3u("Chunwan.txt"),
-        "fm": file_to_m3u("fm.txt"),
-        "Animated": file_to_m3u("Animated.txt"),
-        "About": file_to_m3u("About.txt"),
     }
 
     iptv_m3u = "".join(playlists.values()) + '\n'
-    # update_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    # update_m3u = txt_to_m3u(f"更新时间,#genre#\n{update_time},\n")
+    update_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    update_m3u = txt_to_m3u(f"更新时间,#genre#\n{update_time},\n")
 
     live_m3u = '\n'.join(live_m3u_content.split('\n')[1:]) + '\n'
 
@@ -276,37 +263,6 @@ def update_local_iptv_txt():
                 logging.error(f"Error writing to file {file_name}: {e}")
 
     logging.info("Finished updating all files.")
-
-def generate_youtube_txt():
-    try:
-        logging.info("Fetching README.md from GitHub...")
-        response = requests.get("https://mirror.ghproxy.com/https://raw.githubusercontent.com/ChiSheng9/iptv/refs/heads/master/README.md")
-        response.raise_for_status()
-        logging.info("README.md fetched successfully.")
-
-        content = response.text
-
-        logging.info("Replacing text pattern...")
-        pattern = r'(TV\d+),(.+)'
-        replacement = r'\2,https://raw.githubusercontent.com/ChiSheng9/iptv/master/\1.m3u8'
-        text = re.sub(pattern, replacement, content)
-        logging.info("Text pattern replaced successfully.")
-
-        text = text.replace('  ', '')
-
-        text = """
-YouTube「线路2」,#genre#
-""" + text
-
-        logging.info("Writing to Youtube.txt...")
-        write_to_file(os.path.join(TXT_DIR, "YouTube2.txt"), text)
-        logging.info("Youtube.txt written successfully.")
-
-    except requests.exceptions.RequestException as e:
-        logging.error(f"Error fetching README.md: {e}")
-    except Exception as e:
-        logging.error(f"Error generating Youtube.txt: {e}")
-
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
