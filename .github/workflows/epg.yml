@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: "0 2 * * *"
 
+env:
+  TZ: Asia/Shanghai
+
 jobs:
   epg:
     runs-on: ubuntu-latest
