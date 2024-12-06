@@ -30,9 +30,11 @@ async def main():
         elif args.type == "udpxy":
             await UDPxy().generate_playlist()
     else:
-        logging.error("You must specify an action: --ip or --playlist.")
-
+        logger.error("You must specify an action: --ip or --playlist.")
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-    asyncio.run(main())
+    try:
+        logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+        asyncio.run(main())
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")
