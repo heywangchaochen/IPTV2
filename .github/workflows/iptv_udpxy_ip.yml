@@ -3,7 +3,7 @@ name: Auto Update udpxy IPTV  IP
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 8,16 * * *"
+    - cron: "0 2 * * *"
 
 jobs:
   iptv:
