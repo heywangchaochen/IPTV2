@@ -3,7 +3,7 @@ name: Auto Update EPG
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 20 * * *"
 
 env:
   TZ: Asia/Shanghai
