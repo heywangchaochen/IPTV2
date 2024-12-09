@@ -139,7 +139,7 @@ def main():
 
     live_m3u = '\n'.join(live_m3u_content.split('\n')[1:]) + '\n'
 
-    write_m3u_to_file(os.path.join(M3U_DIR, "IPTV.m3u"), iptv_m3u)
+    write_m3u_to_file(os.path.join(M3U_DIR, "IPTV.m3u"), update_m3u + iptv_m3u)
 
     iptv_txt = m3u_to_txt(read_file_content(os.path.join(M3U_DIR, "IPTV.m3u")))
     write_to_file(os.path.join(TXT_DIR, "IPTV.txt"), iptv_txt)
