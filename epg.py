@@ -4,7 +4,7 @@ import requests
 
 # 原始数据来源地址
 
-m3u_url = "https://raw.githubusercontent.com/lalifeier/IPTV/main/m3u/IPTV.m3u"
+m3u_url = "https://gh-proxy.com/https://raw.githubusercontent.com/heywangchaochen/IPTV2/refs/heads/main/m3u/IPTV.m3u"
 epg1_api = "https://epg.112114.xyz/?ch="
 epg2_api = "https://diyp.112114.xyz/?ch="
 header = {
