@@ -135,7 +135,7 @@ def main():
 
     iptv_m3u = "".join(playlists.values()) + '\n'
     update_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    update_m3u = txt_to_m3u(f"更新时间,#genre#\n{update_time},\n")
+    update_m3u = txt_to_m3u(f"更新时间,#genre#\n{update_time}")
 
     live_m3u = '\n'.join(live_m3u_content.split('\n')[1:]) + '\n'
 
