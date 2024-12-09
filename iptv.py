@@ -12,7 +12,7 @@ from iptv.config import OUTPUT_DIR
 
 logger = logging.getLogger(__name__)
 
-IPTV_URL = "https://ghp.ci/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"
+IPTV_URL = "https://gh-proxy.com/https://raw.githubusercontent.com/heywangchaochen/IPTV2/refs/heads/main/fanmingming_ipv6.m3u"
 M3U_DIR = "m3u"
 TXT_DIR = "txt"
 SALT = os.getenv("SALT", "")
