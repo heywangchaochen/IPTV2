@@ -121,6 +121,7 @@ def main():
 
 
     playlists = {
+        "TIME": file_to_m3u("TIME.txt"),
         "CCTV": file_to_m3u("CCTV.txt"),
         "CNTV": file_to_m3u("CNTV.txt"),
         "Shuzi": file_to_m3u("Shuzi.txt"),
