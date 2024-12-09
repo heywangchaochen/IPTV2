@@ -6,7 +6,7 @@ OUTPUT_DIR = "txt"
 ISP_DICT = {
     "中国电信": "Chinanet",
     "中国联通": "CHINA UNICOM China169 Backbone",
-    # "中国移动": "China Mobile Communications Corporation",
+    "中国移动": "China Mobile Communications Corporation",
 }
 
 REGION_LIST = [
