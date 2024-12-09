@@ -139,7 +139,7 @@ def main():
 
     live_m3u = '\n'.join(live_m3u_content.split('\n')[1:]) + '\n'
 
-    write_m3u_to_file(os.path.join(M3U_DIR, "IPTV.m3u"), iptv_m3u + live_m3u)
+    write_m3u_to_file(os.path.join(M3U_DIR, "IPTV.m3u"), update_m3u + iptv_m3u + live_m3u)
 
     iptv_txt = m3u_to_txt(read_file_content(os.path.join(M3U_DIR, "IPTV.m3u")))
     write_to_file(os.path.join(TXT_DIR, "IPTV.txt"), iptv_txt)
@@ -153,7 +153,7 @@ def file_to_m3u(file_name):
 
 def write_m3u_to_file(file_path, content):
     header = (
-        '#EXTM3U x-tvg-url="https://ghp.ci/https://raw.githubusercontent.com/lalifeier/IPTV/main/e.xml"\n'
+        '#EXTM3U x-tvg-url="https://gh-proxy.com/https://raw.githubusercontent.com/heywangchaochen/IPTV2/refs/heads/main/e.xml"\n'
     )
     write_to_file(file_path, header + content.strip())
 
